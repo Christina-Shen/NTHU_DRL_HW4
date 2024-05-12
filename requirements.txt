@@ -3,3 +3,6 @@ tqdm
 requests
 argparse
 scipy
+matplotlib
+numpy
+osim-env
