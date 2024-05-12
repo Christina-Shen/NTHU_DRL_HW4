@@ -68,6 +68,7 @@ class Actor(nn.Module):
         #action=torch.relu(self.dense4(mean))
 
 
+
         log_std=torch.relu(self.log_dense3(x))
         log_std=torch.relu(self.log_dense4(log_std))
         log_std = torch.clamp(log_std, min=-20, max=2)  
