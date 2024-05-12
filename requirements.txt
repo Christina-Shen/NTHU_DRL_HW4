@@ -3,5 +3,5 @@ tqdm
 requests
 argparse
 scipy
-osim-env
+
 
