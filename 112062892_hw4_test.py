@@ -32,6 +32,8 @@ class ReplayMemory:
         #observations, actions, rewards, next_states = self.buffer[selected_indexs]
 
 
+
+
         observations, actions, rewards, next_states ,if_done= zip(*[self.buffer[i] for i in selected_indexs])
         #print(type(observations))
 
