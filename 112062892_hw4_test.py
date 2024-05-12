@@ -353,26 +353,34 @@ class Agent:
 
 #-----------start train---------------------------------------
 
-agent=Agent()
-agent.load_policy()
-print("---------------start learning----------------------------------")
-print("Using cuda:", torch.cuda.is_available())
-agent.learn()
+# agent=Agent()
+# agent.load_policy()
+# print("---------------start learning----------------------------------")
+# print("Using cuda:", torch.cuda.is_available())
+# agent.learn()
 
 #--------------start test----------------------------------------
 
-# env = L2M2019Env(visualize=True)
-# observation = env.reset()
-# agent=Agent()
-# agent.load_policy()
+env = L2M2019Env(difficulty=2,visualize=True)
+observation = env.reset()
+agent=Agent()
+agent.load_policy()
 
-# rewards=[]
-# for i in range(10):
-#     action=agent.act(observation)
-#     observation, reward, done, info = env.step(action)
-#     rewards.append(reward)
+rewards=[]
+for i in range(10):
+    rew=0
+    observation=env.reset()
+    while(True):
 
-# print ("average reward=",sum(rewards)/len(rewards))
+        action=agent.act(observation)
+        
+        observation, reward, done, info = env.step(action)
+        rew+=reward
+        if(done):
+            break
+    rewards.append(rew)
+
+print ("average reward=",sum(rewards)/len(rewards))
 # import matplotlib.pyplot as plt
 # plt.figure(1)
 # plt.plot(range(len(rewards)),rewards)
