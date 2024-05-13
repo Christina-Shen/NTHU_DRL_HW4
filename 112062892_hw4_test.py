@@ -327,7 +327,7 @@ class Agent:
                 total_reward=0
                 total_td_error=0
     def load_policy(self):
-        path_to_policy: str = '112061588_hw4_data'
+        path_to_policy: str = '112062892_hw4_data'
         path_to_value: str = 'target_network_1'
         path_to_q1: str = 'q1_network_data_1'
         path_to_q2: str = 'q2_network_data_1'
