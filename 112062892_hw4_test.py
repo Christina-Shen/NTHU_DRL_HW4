@@ -363,7 +363,7 @@ class Agent:
 
 #--------------start test----------------------------------------
 
-env = L2M2019Env(difficulty=2,visualize=True)
+env = L2M2019Env(difficulty=2,visualize=False)
 observation = env.reset()
 agent=Agent()
 agent.load_policy()
