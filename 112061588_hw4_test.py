@@ -344,6 +344,7 @@ class Agent:
         for i in range(self.skip):
             obs, reward, done, _ = self.env.step(action)
             rewards+=reward
+
             if done:
                 if_done=True
                 break
